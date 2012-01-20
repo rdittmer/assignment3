@@ -111,7 +111,7 @@
  	numDeaths  = 0;
  	numKills   = 0;
  	
- 	console.log( playerName[ playerNum ] + " has begun the match." );
+ 	console.log( playerNames[ playerNum ] + " has begun the match." );
  	while ( numDeaths < deathLimit )
  	{
  		randomNum = Math.random();
@@ -129,5 +129,16 @@
  	}
  	return numKills;
  }
-
+ 
+ 
+ function getBestScore( playerScore, bestScore, playerNum )
+ {
+ 	if ( playerScore > bestScore || playerScore == bestScore )
+ 	{	
+ 		console.log( playerNames[ playerNum ] + " now has the best score." );
+ 		return true;
+ 	}
+ 	else
+ 		return false;
+ }
  
