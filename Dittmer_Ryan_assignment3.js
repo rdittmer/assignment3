@@ -101,3 +101,33 @@
  }
  
  
+ function getKills( playerNum, deathLimit )
+ {
+ 	var randomNum;
+ 	var numDeaths;
+ 	var numKills;
+ 
+ 	randomNum  = 0;
+ 	numDeaths  = 0;
+ 	numKills   = 0;
+ 	
+ 	console.log( playerName[ playerNum ] + " has begun the match." );
+ 	while ( numDeaths < deathLimit )
+ 	{
+ 		randomNum = Math.random();
+ 		randomNum = Math.round( randomNum );
+ 		if ( randomNum == 0 )
+ 		{
+ 			console.log( playerNames[ playerNum ] + " has died. " );
+ 			numDeaths = numDeaths + 1;
+ 		}
+ 		else
+ 		{
+ 			console.log( playerNames[ playerNum ] + " has killed an enemy." );
+ 			numKills = numKills + 1;
+ 		}
+ 	}
+ 	return numKills;
+ }
+
+ 
