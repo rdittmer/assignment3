@@ -7,10 +7,12 @@
  var playerNames;
  var playerScores;
  var deathLimit;
+ var winningMsg;
  
  playerNames  = [" "," "," "];
  playerScores = [5,   10 , 110 ];
- deathLimit   = 5;
+ deathLimit   =  5;
+ winningMsg   = " has won the game!";
  
  
  var playerList = 
@@ -67,6 +69,7 @@
  playerNames  = playerList.getNames();
  playerScores = playerList.getScores();
  playerList.preGame();
+ playGame( playerScores, playerNames, deathLimit );
  
  
  function playGame( playerScores, playerNames, deathLimit )
@@ -142,3 +145,15 @@
  		return false;
  }
  
+ 
+ function getBestName ( playerName, winningMsg )
+ {
+ 	var winner;
+ 	
+ 	winner = "";
+ 	
+ 	winner = playerName.concat( winningMsg );
+ 	winner = winner.toUpperCase();
+ 	
+ 	return winner;
+ } 
