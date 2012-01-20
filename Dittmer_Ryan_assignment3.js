@@ -10,16 +10,16 @@
  var winningMsg;
  
  playerNames  = [" "," "," "];
- playerScores = [5,   10 , 110 ];
+ playerScores = [0,   0 , 0 ];
  deathLimit   =  5;
  winningMsg   = " has won the game!";
  
  
  var playerList = 
  {
- 	 player : [],
+ 	player: [],
  
- 	handleData : function( json ) 
+ 	handleData: function( json ) 
  	{
  		for ( var i = 0; i < json.player.length; ++i )
  		{
@@ -87,8 +87,8 @@
  	
  	for ( var i = 0; i < playerScores.length; ++i )
  	{
- 		numKills = getKills( i, deathLimit );
- 		totalScore   = ( numKills * 100 );
+ 		numKills           = getKills( i, deathLimit );
+ 		totalScore         = ( numKills * 100 );
  		playerScores[ i ]  = totalScore;
  		
  		console.log( playerNames[ i ] + "'s total score is " + playerScores[ i ] );
